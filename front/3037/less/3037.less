@@ -1,0 +1,205 @@
+// Variables
+@font-color: #999;
+@primary-color: #43c3ea;
+@highlight-color: #fff;
+@body-font: 'Open Sans', sans-serif;
+@font-size: 14px;
+@font-weight: 400;
+@line-height: 26px;
+
+// Base Styles
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 10px;
+    font-family: @body-font;
+    font-size: @font-size;
+    color: @font-color;
+    line-height: @line-height;
+    font-weight: @font-weight;
+}
+
+h5 {
+    color: #3d3d3d;
+    font-weight: bold;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-size: @font-size;
+    color: @font-color;
+    border: 1px solid #ececec;
+    margin-bottom: 30px;
+    transition: all 500ms ease;
+}
+
+textarea {
+    height: 170px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 17px 0;
+    background-color: @primary-color;
+    color: @highlight-color;
+    border-radius: 2px;
+    border: none;
+    transition: all 500ms ease;
+}
+
+.title {
+    font-size: calc(@font-size * 2);
+    padding-bottom: 34px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #3d3d3d;
+}
+
+.accordion {
+    margin-bottom: 10px;
+    border: none;
+}
+
+.accordion-checkbox {
+    display: none;
+}
+
+.accordion-item h5 {
+    margin: 0;
+}
+
+.accordion-btn {
+    position: relative;
+    display: block;
+    background-color: #f7f7f7;
+    margin: 7px;
+    cursor: pointer;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-checkbox:checked + .accordion-btn {
+    background-color: #152545;
+    color: @highlight-color;
+}
+
+.accordion-checkbox:checked + .accordion-btn h5 {
+    color: @highlight-color;
+}
+
+.accordion-btn::after {
+    background: #252525 none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #fff;
+    content: '\f054';
+    font-family: 'FontAwesome';
+    font-size: 12px;
+    font-weight: 100;
+    height: 20px;
+    line-height: 22px;
+    margin-top: -15px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: 29.5px;
+    width: 20px;
+    transition: all 500ms ease;
+}
+
+.accordion-checkbox:checked + .accordion-btn::after {
+    transform: rotate(90deg);
+    color: @highlight-color;
+    background-color: @primary-color;
+}
+
+.accordion-content {
+    max-height: 0;
+    width: 96%;
+    margin-left: 7px;
+    padding-right: -14px;
+    margin-top: -7px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-checkbox:checked ~ .accordion-content {
+    max-height: 500px;
+}
+
+.accordion-content ul {
+    padding: 20px;
+    background-color: @highlight-color;
+    border: 1px solid #000;
+}
+
+.contact-info-list {
+    padding: 10px;
+    background-color: @highlight-color;
+    border: 1px solid #000;
+}
+
+.contact-info-list li {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: @line-height;
+    list-style: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.contact-info-list .icon-holder {
+    position: relative;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.contact-info-list h5 {
+    color: #3d3d3d;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 20px 0 0 0;
+}
+
+.contact-info-list .dsc {
+    color: @font-color;
+}
+
+.contact-info-list li:last-child {
+    border-bottom: none;
+}
+
+.icon-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    color: @primary-color;
+}
